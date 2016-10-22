@@ -58,7 +58,7 @@ wsServer.on('request', function(req) {
 					}));
 
 					console.log("Writing to file");
-					fs.writeFileSync("model.json", JSON.stringify(res))	;
+					fs.writeFileSync("model.json", JSON.stringify(res, null, 2));
 				});
 				break;
 
