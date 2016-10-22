@@ -178,6 +178,7 @@
 		});
 
 		if (recording) {
+			phraseMaker.config.label = document.getElementById("phraseName").value;
 			phraseMaker.addObservation(sextet);
 		}
 

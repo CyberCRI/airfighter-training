@@ -3,6 +3,7 @@ var connect = require('connect');
 var serveStatic = require('serve-static');
 var ws = require('websocket').server;
 var xmm = require('xmm-node');
+var fs = require('fs');
 
 var port = 8000;
 
@@ -55,6 +56,9 @@ wsServer.on('request', function(req) {
 						msg: 'model',
 						data: res
 					}));
+
+					console.log("Writing to file");
+					fs.writeFileSync("model.json", JSON.stringify(res))	;
 				});
 				break;
 
